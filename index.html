@@ -12,7 +12,9 @@
 <body>
     <!-- Header -->
     <section id="header">
-        <div class="header-left"></div>
+        <div class="header-left">
+            <div class="logo">D</div>
+        </div>
         <div class="header-right"></div>
     </section>
 
@@ -51,7 +53,7 @@
     <!-- Expenses -->
     <section id="expenses">
         <div class="bills card">
-            <h2>Bills</h2>
+            <div class="card-title"><h2>Bills</h2></div>
             <div class="bill-item-container">
                 <!-- Apple Music -->
                 <div><input type="checkbox"></div>
@@ -83,7 +85,7 @@
 
         <!-- Budget -->
         <div class="budget card">
-            <h2>Budget</h2>
+            <div class="card-title"><h2>Budget</h2></div>
             <div class="budget-item-container">
                 <!-- Grocery -->
                 <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
@@ -103,7 +105,7 @@
             </div>
             <div class="budget-results">
                 <output>$$$</output> <!-- JavaScript to dynamically update output -->
-                <p>Remainder</p>
+                <p>Remainder =</p>
                 <output>$$$</output> <!-- JavaScript to dynamically update output -->
             </div>
         </div>
@@ -111,11 +113,33 @@
 
     <!-- Summary -->
     <section id="summary">
-        <div class="summary card"></div>
+        <div class="summary card">
+            <div class="card-title"><h2>Summary</h2></div>
+            <div class="summary-breakdown">
+                <div>
+                    <h3>Your Pay</h3>
+                    <output>$$$</output>
+                </div>
+                <div>
+                    <h3>Your Bills</h3>
+                    <output>$$$</output>
+                </div>
+                <div>
+                    <h3>Your Budget</h3>
+                    <output>$$$</output>
+                    <div class="summary-savings">
+                        <p>Save</p>
+                        <output>$$$</output>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <section id="footer"></section>
+    <section id="footer">
+        <h4>&#169 Jalen Pinder 2024</h4>
+    </section>
 </body>
 </html>
 
