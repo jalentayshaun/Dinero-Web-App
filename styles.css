@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #0062F0;
+    --secondary-color: #09F097;
+    --accent-color: #00AEF0;
+    --accent-color-2: #00F0E5;
+    --accent-color-3: #0016F0;
+}
+
+section {
+    /* min-height: 10rem; */
+    margin-bottom: 20px;
+    padding: 0px;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div {
+    border: 1px solid rgb(0, 162, 255);
+}
+
+div.card {
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.213);
+}
+
+/* font-family: "Playball", cursive; */
+
+h1 {
+    font-family: "Playball", cursive;
+    font-size: 7rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 2px solid black;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.213);
+}
+
+h2, h3 {
+
+}
+
+body {
+    margin: 0px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--accent-color-3));
+    background-size: 180%;
+}
+
+/* Header */
+#header {}
+
+#header div {
+    display: flex;
+    width: 50%;
+    height: 5rem;
+}
+
+.header-left {
+    justify-content: flex-start;
+}
+
+.header-right {
+    justify-content: flex-end;
+}
+
+/* Banner */
+#banner {
+    justify-content: center;
+}
+
+/* Earnings */
+#earnings {}
+
+#earnings div {
+    width: 25%;
+    height: 20rem;
+}
+
+/* Expenses */
+#expenses {}
+
+#expenses div {
+    width: 40%;
+    height: 30rem;
+}
+
+/* Summary */
+#summary {}
+
+#summary div {
+    width: 75%;
+    height: 15rem;
+}
+
+/* Footer */
+#footer {
+    height: 10rem;
+    margin-bottom: 0px;
+}
