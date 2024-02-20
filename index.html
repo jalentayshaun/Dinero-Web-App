@@ -23,13 +23,63 @@
 
     <!-- Earnings -->
     <section id="earnings">
-        <div class="upcoming-pay card"></div>
-        <div class="current-pay card"></div>
+        <!-- Pay based on upcoming hours -->
+        <div class="upcoming-pay card">
+            <div>
+                <p>Hourly Wage:</p>
+                <input type="number">
+                <p>/hr</p>
+            </div>
+            <div>
+                <p>Hours Worked:</p>
+                <input type="number">
+                <p>hours</p>
+            </div>
+            <div>
+                <p>Gross Pay =</p>
+                <output>$$$</output> <!-- JavaScript to dynamically update output -->
+            </div>
+        </div>
+
+        <!-- Current or most recent paycheque -->
+        <div class="current-pay card">
+            <p>Enter Gross Pay:</p>
+            <input type="number">
+        </div>
     </section>
 
     <!-- Expenses -->
     <section id="expenses">
-        <div class="bills card"></div>
+        <div class="bills card">
+            <h2>Bills</h2>
+            <div class="bill-item-container">
+                <!-- Apple Music -->
+                <div><input type="checkbox"></div>
+                <div class="bill-item">Apple Music</div>
+                <div class="bill-amount">$6.89</div>
+
+                <!-- Amazon Prime -->
+                <div><input type="checkbox"></div>
+                <div class="bill-item">Amazon Prime</div>
+                <div class="bill-amount">$9.19</div>
+
+                <!-- iCloud -->
+                <div><input type="checkbox"></div>
+                <div class="bill-item">iCloud</div>
+                <div class="bill-amount">$6.89</div>
+                
+                <!-- Phone Bill -->
+                <div><input type="checkbox"></div>
+                <div class="bill-item">Phone Bill</div>
+                <div class="bill-amount">$44.85</div>
+            </div>
+
+            <!-- Calculate Bills -->
+            <div class="bill-results">
+                <button>Total</button>
+                <output>$$$</output> <!-- JavaScript to dynamically update output -->
+            </div>
+        </div>
         <div class="budget card"></div>
     </section>
 
