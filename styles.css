@@ -7,17 +7,17 @@
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 0px;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
 div {
-    border: 1px solid rgb(0, 162, 255);
+    /* border: 1px solid rgb(0, 162, 255); */
 }
 
 div.card {
@@ -25,6 +25,7 @@ div.card {
     padding: 10px;
     background-color: white;
     border: 1px solid black;
+    min-width: 60%;
     box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.213);
 }
 
@@ -70,10 +71,19 @@ output {
     color: var(--accent-color);
 }
 
+output.total {
+    display: flex;
+    justify-content: center;
+    color: var(--secondary-color);
+    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.804);
+    min-width: 8rem;
+}
+
 body {
-    margin: 0px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--accent-color-3));
-    /* background: linear-gradient(135deg, var(--accent-color-3), var(--secondary-color), var(--primary-color)); */
+    margin: 15px;
+    /* background: linear-gradient(135deg, var(--primary-color), var(--accent-color), var(--accent-color-3)); */
+    background: linear-gradient(135deg, var(--accent-color-3), var(--secondary-color), var(--primary-color));
     background-size: 180%;
     font-family: "Raleway", sans-serif;
     font-size: larger;
@@ -117,15 +127,16 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 20rem 20rem 20rem;
+    grid-template-rows: auto auto auto;
 }
 
-/* Earnings */
-#earnings {}
+/* Income */
+#income {
+    position: relative;
+}
 
-#earnings > div {
-    width: 40%;
-    min-height: 15rem;
+#income > div {
+    /* min-height: 15rem; */
     display: flex;
 }
 
@@ -136,31 +147,54 @@ body {
 .upcoming-pay > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     min-width: 100%;
-    margin-bottom: 15px;
 }
 
 .upcoming-pay > div > p {
     margin: 10px;
 }
 
+.calculate {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 4rem;
+    min-width: 100%;
+}
+
+.calculate button {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 150;
+    font-style: italic;
+    font-size: 1.5rem;
+    background-color: var(--secondary-color);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 10rem;
+}
+
+.calculate button:hover {
+    background-color: var(--accent-color-2);
+    font-weight: 250;
+    cursor: pointer;
+}
+
 .current-pay {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 }
 
-/* Expenses */
-#expenses {
+.salary {
     display: flex;
-    /* flex-direction: column; */
-}
-
-#expenses div {
-    width: 40%;
-    /* height: 30rem; */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 7rem;
+    min-width: 100%;
 }
 
 /* Bills Tab */
@@ -184,30 +218,29 @@ body {
     min-width: 100%;
 }
 
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 1.25rem;
+    width: 1.25rem;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--secondary-color);
+}
+
 .bill-amount {
     font-family: "DM Sans", sans-serif;
 }
 
-.bill-results {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 4rem;
-    min-width: 100%;
-}
-
-.bill-results button {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 150;
-    font-style: italic;
-    font-size: 1.5rem;
-    background-color: var(--secondary-color);
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 10rem;
-}
-
 /* Budget Tab */
+#budget {
+    grid-column: span 2;
+}
+
 .budget { /* SAME AS BILL */
     display: flex;
     flex-direction: column;
@@ -215,9 +248,10 @@ body {
 
 .budget-item-container { /* SAME AS BILL EXCEPT COLUMNS */
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: 2rem;
     min-width: 100%;
+    margin-bottom: 10px;
 }
 
 .budget-item-container > div { /* SAME AS BILL */
@@ -228,18 +262,19 @@ body {
 }
 
 .budget-results { /* SAME AS BILL */
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
-    height: 4rem;
-    min-width: 100%;
+}
+
+.budget-results > div {
+    display: flex;
+    justify-content: center;
 }
 
 /* Summary */
-#summary {}
-
-#summary div {
-    width: 87.5%;
+#summary {
+    grid-column: span 2;
 }
 
 .summary-breakdown {

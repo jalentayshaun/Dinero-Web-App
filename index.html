@@ -21,8 +21,8 @@
         </div>
         <div class="header-right">
             <div>Day/Night</div>
-            <div>How It Works</div>
-            <div>Settings</div>
+            <!-- <div>How It Works</div>
+            <div>Settings</div> -->
         </div>
     </section>
 
@@ -33,119 +33,157 @@
 
     <!-- Content Container -->
     <section class="grid-container">
-    </section>
-
-    <!-- Earnings -->
-    <section id="earnings">
-        <!-- Pay based on upcoming hours -->
-        <div class="upcoming-pay card">
-            <div>
-                <p>Hourly Wage:</p>
-                <input type="number">
-                <p>/hr</p>
+        <!-- Income -->
+        <section id="income">
+            <!-- Pay based on upcoming hours -->
+            <div class="upcoming-pay card">
+                <div class="card-title">
+                    <h2>Income</h2>
+                </div>
+                <div>
+                    <p>Hourly Wage:</p>
+                    <input type="number">
+                    <p>/hr</p>
+                </div>
+                <div>
+                    <p>Hours Worked:</p>
+                    <input type="number">
+                    <p>hours</p>
+                </div>
+                <!-- Calculate -->
+                <div class="calculate">
+                    <button>Total</button>
+                    <output class="total">$$$</output> <!-- JavaScript to dynamically update output -->
+                </div>
             </div>
-            <div>
-                <p>Hours Worked:</p>
-                <input type="number">
-                <p>hours</p>
+        
+            <!-- Current or most recent paycheque -->
+            <!-- <div class="current-pay card">
+                <div class="card-title">
+                    <h2>Income</h2>
+                </div>
+                <div class="salary">
+                    <p>Enter Salary / Net Income:</p>
+                    <input type="number">
+                </div>
+            </div> -->
+        </section>
+        
+        <!-- Bills -->
+        <section id="bills">
+            <div class="bills card">
+                <div class="card-title">
+                    <h2>Bills</h2>
+                </div>
+                <div class="bill-item-container">
+                    <!-- Apple Music -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Apple Music</div>
+                    <div class="bill-amount">$6.89</div>
+            
+                    <!-- Amazon Prime -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Amazon Prime</div>
+                    <div class="bill-amount">$9.19</div>
+            
+                    <!-- iCloud -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">iCloud</div>
+                    <div class="bill-amount">$3.30</div>
+            
+                    <!-- Phone Bill -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Phone Bill</div>
+                    <div class="bill-amount">$44.85</div>
+
+                    <!-- Bus -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Bus</div>
+                    <div class="bill-amount">$82.50</div>
+                    
+                    <!-- Rent -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Rent</div>
+                    <div class="bill-amount">$375</div>
+                    
+                    <!-- Gym -->
+                    <div><input type="checkbox"></div>
+                    <div class="bill-item">Gym</div>
+                    <div class="bill-amount">$40</div>
+                </div>
+            
+                <!-- Calculate -->
+                <div class="calculate">
+                    <button>Total</button>
+                    <output class="total">$$$</output> <!-- JavaScript to dynamically update output -->
+                </div>
             </div>
-            <div>
-                <p>Gross Pay =</p>
-                <output>$$$</output> <!-- JavaScript to dynamically update output -->
-            </div>
-        </div>
-
-        <!-- Current or most recent paycheque -->
-        <!-- <div class="current-pay card">
-            <p>Enter Gross Pay:</p>
-            <input type="number">
-        </div> -->
-    </section>
-
-    <!-- Expenses -->
-    <section id="expenses">
-        <div class="bills card">
-            <div class="card-title"><h2>Bills</h2></div>
-            <div class="bill-item-container">
-                <!-- Apple Music -->
-                <div><input type="checkbox"></div>
-                <div class="bill-item">Apple Music</div>
-                <div class="bill-amount">$6.89</div>
-
-                <!-- Amazon Prime -->
-                <div><input type="checkbox"></div>
-                <div class="bill-item">Amazon Prime</div>
-                <div class="bill-amount">$9.19</div>
-
-                <!-- iCloud -->
-                <div><input type="checkbox"></div>
-                <div class="bill-item">iCloud</div>
-                <div class="bill-amount">$3.30</div>
-                
-                <!-- Phone Bill -->
-                <div><input type="checkbox"></div>
-                <div class="bill-item">Phone Bill</div>
-                <div class="bill-amount">$44.85</div>
-            </div>
-
-            <!-- Calculate Bills -->
-            <div class="bill-results">
-                <button>Total</button>
-                <output>$$$</output> <!-- JavaScript to dynamically update output -->
-            </div>
-        </div>
+        </section>
 
         <!-- Budget -->
-        <div class="budget card">
-            <div class="card-title"><h2>Budget</h2></div>
-            <div class="budget-item-container">
-                <!-- Grocery -->
-                <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
-                <div class="budget-item">Groceries</div>
-
-                <!-- Eating Out -->
-                <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
-                <div class="budget-item">Eating Out</div>
-
-                <!-- Personal -->
-                <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
-                <div class="budget-item">Personal</div>
-
-                <!-- Laundry -->
-                <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
-                <div class="budget-item">Laundry</div>
-            </div>
-            <div class="budget-results">
-                <output>$$$</output> <!-- JavaScript to dynamically update output -->
-                <p>Remainder =</p>
-                <output>$$$</output> <!-- JavaScript to dynamically update output -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Summary -->
-    <section id="summary">
-        <div class="summary card">
-            <div class="card-title"><h2>Summary</h2></div>
-            <div class="summary-breakdown">
-                <div>
-                    <h3>Your Pay</h3>
-                    <output>$$$</output>
+        <section id="budget">
+            <div class="budget card">
+                <div class="card-title calculate">
+                    <h2>Budget</h2>
+                    <button>Calculate</button>
                 </div>
-                <div>
-                    <h3>Your Bills</h3>
-                    <output>$$$</output>
+                <div class="budget-item-container">
+                    <!-- Grocery -->
+                    <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
+                    <div class="budget-item">Groceries</div>
+            
+                    <!-- Eating Out -->
+                    <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
+                    <div class="budget-item">Eating Out</div>
+            
+                    <!-- Personal -->
+                    <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
+                    <div class="budget-item">Personal</div>
+            
+                    <!-- Laundry -->
+                    <div><output>$$$</output></div> <!-- JavaScript to dynamically update output -->
+                    <div class="budget-item">Laundry</div>
                 </div>
-                <div>
-                    <h3>Your Budget</h3>
-                    <output>$$$</output>
-                    <div class="summary-savings">
-                        <p>Savings:</p>
-                        <output>$$$</output>
+                <div class="budget-results">
+                    <div>
+                        <output class="total">$$$</output> <!-- JavaScript to dynamically update output -->
+                    </div>
+                    <div>
+                        <p>Remainder =</p>
+                    </div>
+                    <div>
+                        <output>$$$</output> <!-- JavaScript to dynamically update output -->
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Summary -->
+        <section id="summary">
+            <div class="summary card">
+                <div class="card-title">
+                    <h2>Summary</h2>
+                </div>
+                <div class="summary-breakdown">
+                    <div>
+                        <h3>Your Pay</h3>
+                        <output>$$$</output>
+                    </div>
+                    <div>
+                        <h3>Your Bills</h3>
+                        <output>$$$</output>
+                    </div>
+                    <div>
+                        <h3>Your Budget</h3>
+                        <output>$$$</output>
+                        <div class="summary-savings">
+                            <p>Savings:</p>
+                            <output>$$$</output>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 
     <!-- Footer -->
