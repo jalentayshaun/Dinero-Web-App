@@ -10,13 +10,14 @@ incomeButton.addEventListener("click", function() {
 });
 
 // Calculate Bills
+var billAmount = document.querySelector(".bill-item-container input[type='checkbox']:checked ~ .bill-amount");
 var billsButton = document.querySelector("#bills .calculate button");
 var billsResult = document.querySelector("#bills .calculate .total");
 
 function calculateBills() {
     var billList = document.querySelectorAll(".bill-item-container input[type='checkbox']:checked");
     for(var i = 0; i < billList.length; i++) {
-        
+
     }
 }
 
