@@ -36,11 +36,42 @@ var budgetResults = document.querySelector("#budget .total");
 budgetButton.addEventListener("click", calculateBudget);
 
 function calculateBudget() {
+    var incomeAfterBills = Math.round(incomeResult.value) - Math.round(billsResult.value);
     var groceries = document.querySelector(".groceries");
     var eatingOut = document.querySelector(".eating-out");
     var personal = document.querySelector(".personal");
     var laundry = document.querySelector(".laundry");
 
-    var incomeAfterBills = parseFloat(incomeResult) - parseFloat(billsResult);
     groceries.innerHTML = incomeAfterBills * 0.25;
+    if (groceries.innerHTML > 150) {
+        groceries.innerHTML = 150;
+    }
+
+    eatingOut.innerHTML = incomeAfterBills * 0.15;
+    if (eatingOut.innerHTML > 50) {
+        eatingOut.innerHTML = 50;
+    }
+
+    personal.innerHTML = incomeAfterBills * 0.15;
+    if (personal.innerHTML > 75) {
+        personal.innerHTML = 75;
+    }
+
+    laundry.innerHTML = incomeAfterBills * 0.05;
+    if (laundry.innerHTML > 20) {
+        laundry.innerHTML = 20;
+    }
+
+    budgetResults.innerHTML = parseInt(groceries.innerHTML) + parseInt(eatingOut.innerHTML) + parseInt(personal.innerHTML) + parseInt(laundry.innerHTML);
+
+    // Calculate and Print Remainder
+    var remainder = document.querySelector(".remainder");
+    var remainderTotal = incomeAfterBills - (budgetResults.innerHTML);
+    remainder.innerHTML = remainderTotal;
+
+    printSummary();
+}
+
+function printSummary() {
+
 }
