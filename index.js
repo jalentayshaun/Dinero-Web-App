@@ -1,29 +1,46 @@
 // Calculate Income
-var hourlyWage = document.querySelector("#income .hourly-wage input");
-var hoursWorked = document.querySelector("#income .hours-worked input");
-var incomeButton = document.querySelector("#income .calculate button");
-var incomeResult = document.querySelector("#income .calculate .total");
+var incomeButton = document.querySelector("#income button");
+var incomeResult = document.querySelector("#income .total");
 
-incomeButton.addEventListener("click", function() {
+incomeButton.addEventListener("click", calculateIncome);
+
+function calculateIncome() {
+    var hourlyWage = document.querySelector(".hourly-wage input");
+    var hoursWorked = document.querySelector(".hours-worked input");
     var totalIncome = hourlyWage.valueAsNumber * hoursWorked.valueAsNumber;
-    incomeResult.textContent = "$" + totalIncome;
-});
+
+    incomeResult.textContent = totalIncome;
+    return totalIncome;
+}
 
 // Calculate Bills
-var billAmount = document.querySelector(".bill-item-container input[type='checkbox']:checked ~ .bill-amount");
-var billsButton = document.querySelector("#bills .calculate button");
-var billsResult = document.querySelector("#bills .calculate .total");
+var billsButton = document.querySelector("#bills button");
+var billsResult = document.querySelector("#bills .total");
+
+billsButton.addEventListener("click", calculateBills);
 
 function calculateBills() {
-    var billList = document.querySelectorAll(".bill-item-container input[type='checkbox']:checked");
+    var billList = document.querySelectorAll(".bill-item-container > div > input[type='checkbox']:checked ~ div.bill-amount");
+    var billTotal = 0;
     for(var i = 0; i < billList.length; i++) {
-
+        billTotal += parseFloat(billList[i].innerHTML);
     }
+    billsResult.textContent = billTotal;
+    return billTotal;
 }
 
 // Calculate Budget & Summary
-var budgetButton = document.querySelector("#budget .calculate button");;
+var budgetButton = document.querySelector("#budget button");
+var budgetResults = document.querySelector("#budget .total");
+
+budgetButton.addEventListener("click", calculateBudget);
 
 function calculateBudget() {
-    
+    var groceries = document.querySelector(".groceries");
+    var eatingOut = document.querySelector(".eating-out");
+    var personal = document.querySelector(".personal");
+    var laundry = document.querySelector(".laundry");
+
+    var incomeAfterBills = parseFloat(incomeResult) - parseFloat(billsResult);
+    groceries.innerHTML = incomeAfterBills * 0.25;
 }
