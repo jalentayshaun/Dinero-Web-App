@@ -129,6 +129,7 @@ output.total {
     align-items: center;
     background-color: transparent;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .header-right img {
@@ -137,27 +138,19 @@ output.total {
     margin: 0px;
 }
 
-/* .light-mode {
-    border-radius: 15px;
-} */
-
-.light-mode button {
+.mode button {
     background-color: white;
     border-color: white;
 }
 
 .light-mode button:hover {
     background-color: var(--accent-color-2);
-    cursor: pointer;
-}
-
-.night-mode button {
-    background-color: var(--accent-color);
-    border-color: white;
+    border-color: var(--accent-color);
 }
 
 .night-mode button:hover {
     background-color: var(--accent-color-2);
+    border-color: var(--primary-color);
 }
 
 /* Banner */

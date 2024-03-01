@@ -1,10 +1,19 @@
 // Light/Dark Mode
 document.querySelector(".light-mode button").addEventListener("click", function() {
+    // Body Background
     document.querySelector("body").classList.toggle("light-background");
     document.querySelector(".mode").classList.toggle("light-mode");
     document.querySelector(".mode").classList.toggle("night-mode");
-    document.querySelector(".mode button img").toggleAttribute("src", "./assets/svgs/brightness-high.svg");
-    document.querySelector(".mode button img").setAttribute("src", "./assets/svgs/moon-stars.svg");
+
+    // Light mode button
+    var lightModeImage = document.querySelector(".mode button img");
+
+    if (lightModeImage.getAttribute("src") == "./assets/svgs/brightness-high.svg") {
+        lightModeImage.setAttribute("src", "./assets/svgs/moon-stars.svg");
+    }
+    else if (lightModeImage.getAttribute("src") == "./assets/svgs/moon-stars.svg") {
+        lightModeImage.setAttribute("src", "./assets/svgs/brightness-high.svg");
+    }
 });
 
 // Calculate Income
