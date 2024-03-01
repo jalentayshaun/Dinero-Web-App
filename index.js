@@ -1,3 +1,12 @@
+// Light/Dark Mode
+document.querySelector(".light-mode button").addEventListener("click", function() {
+    document.querySelector("body").classList.toggle("light-background");
+    document.querySelector(".mode").classList.toggle("light-mode");
+    document.querySelector(".mode").classList.toggle("night-mode");
+    document.querySelector(".mode button img").toggleAttribute("src", "./assets/svgs/brightness-high.svg");
+    document.querySelector(".mode button img").setAttribute("src", "./assets/svgs/moon-stars.svg");
+});
+
 // Calculate Income
 var incomeButton = document.querySelector("#income button");
 var incomeResult = document.querySelector("#income .total");
@@ -43,23 +52,23 @@ function calculateBudget() {
     var laundry = document.querySelector(".laundry");
 
     groceries.innerHTML = incomeAfterBills * 0.25;
-    if (groceries.innerHTML > 150) {
-        groceries.innerHTML = 150;
+    if (groceries.innerHTML > 200) {
+        groceries.innerHTML = 200;
     }
 
     eatingOut.innerHTML = incomeAfterBills * 0.15;
-    if (eatingOut.innerHTML > 50) {
-        eatingOut.innerHTML = 50;
+    if (eatingOut.innerHTML > 75) {
+        eatingOut.innerHTML = 75;
     }
 
     personal.innerHTML = incomeAfterBills * 0.15;
-    if (personal.innerHTML > 75) {
-        personal.innerHTML = 75;
+    if (personal.innerHTML > 100) {
+        personal.innerHTML = 100;
     }
 
     laundry.innerHTML = incomeAfterBills * 0.05;
-    if (laundry.innerHTML > 20) {
-        laundry.innerHTML = 20;
+    if (laundry.innerHTML > 25) {
+        laundry.innerHTML = 25;
     }
 
     budgetResults.innerHTML = parseInt(groceries.innerHTML) + parseInt(eatingOut.innerHTML) + parseInt(personal.innerHTML) + parseInt(laundry.innerHTML);
@@ -72,6 +81,7 @@ function calculateBudget() {
     printSummary();
 }
 
+// Print Summary from Budget
 function printSummary() {
 
 }
