@@ -158,6 +158,7 @@ output.total {
     justify-content: center;
 }
 
+/* Content Section */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -167,14 +168,12 @@ output.total {
 /* Income */
 #income {
     position: relative;
-}
-
-#income > div {
-    /* min-height: 15rem; */
-    display: flex;
+    margin: 0px;
+    min-height: 100%;
 }
 
 .upcoming-pay {
+    display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 1;
@@ -233,6 +232,11 @@ output.total {
 }
 
 /* Bills Tab */
+#bills {
+    margin: 0px;
+    min-height: 100%;
+}
+
 .bills {
     display: flex;
     flex-direction: column;
@@ -280,10 +284,6 @@ input[type="checkbox"]:checked {
 }
 
 /* Budget Tab */
-#budget {
-    grid-column: span 2;
-}
-
 .budget { /* SAME AS BILL */
     display: flex;
     flex-direction: column;
@@ -317,10 +317,6 @@ input[type="checkbox"]:checked {
 }
 
 /* Summary */
-#summary {
-    grid-column: span 2;
-}
-
 .summary-breakdown {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -347,4 +343,25 @@ input[type="checkbox"]:checked {
 #footer {
     height: 5rem;
     margin-bottom: 0px;
+}
+
+/* Medium Screens */
+@media (max-width: 992px) {
+    .calculate button {
+        max-width: 7rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .grid-container > section {
+        margin-bottom: 25px;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 576px) {
+
 }
