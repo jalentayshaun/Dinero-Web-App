@@ -37,12 +37,13 @@ div {
     /* border: 1px solid rgb(0, 162, 255); */
 }
 
-div.card {
+.card {
     border-radius: 15px;
     padding: 10px;
     background-color: white;
     border: 1px solid black;
-    min-width: 60%;
+    width: 75%;
+    min-width: 25rem;
     box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.213);
 }
 
@@ -62,7 +63,7 @@ h1 {
     background-color: var(--secondary-color);
     border: 2px solid black;
     box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.213);
-    text-shadow: 2px 2px 1px white;
+    text-shadow: 2px 2px 5px white;
 }
 
 h2, h3 {
@@ -231,7 +232,7 @@ output.total {
     min-width: 100%;
 }
 
-/* Bills Tab */
+/* Bills */
 #bills {
     margin: 0px;
     min-height: 100%;
@@ -253,6 +254,7 @@ output.total {
 .bill-item-container > div {
     display: grid;
     grid-template-columns: 1fr 3fr 2fr;
+    align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.214);
     min-width: 100%;
 }
@@ -261,8 +263,10 @@ output.total {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 5px;
+    height: 100%;
     min-width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 input[type="checkbox"] {
@@ -283,7 +287,7 @@ input[type="checkbox"]:checked {
     font-family: "DM Sans", sans-serif;
 }
 
-/* Budget Tab */
+/* Budget */
 .budget { /* SAME AS BILL */
     display: flex;
     flex-direction: column;
@@ -314,6 +318,7 @@ input[type="checkbox"]:checked {
 .budget-results > div {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Summary */
@@ -329,14 +334,27 @@ input[type="checkbox"]:checked {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100%;
+    padding: 10px;
+    margin: 0px;
+    /* min-width: 100%; */
+}
+
+.income-post-bills {
+    grid-column: span 2;
+}
+
+.income-post-bills output {
+    color: var(--accent-color-3);
 }
 
 .summary-savings {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 100%;
+}
+
+.summary-savings output {
+    color: var(--secondary-color);
 }
 
 /* Footer */
@@ -347,10 +365,6 @@ input[type="checkbox"]:checked {
 
 /* Medium Screens */
 @media (max-width: 992px) {
-    .calculate button {
-        max-width: 7rem;
-    }
-
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -363,5 +377,31 @@ input[type="checkbox"]:checked {
 
 /* Small Screens */
 @media (max-width: 576px) {
+    body {
+        font-size: medium;
+    }
 
+    h1 {
+        font-size: 5rem;
+    }
+
+    .card {
+        min-width: 10rem;
+    }
+
+    .calculate button {
+        max-width: 7rem;
+    }
+
+    .summary-budget h3 {
+        align-self: flex-end;
+    }
+}
+
+/* Smaller Screens */
+@media (max-width: 420px) {
+    /* Resize Remainder and Savings in Budget and Summary section */
+    .budget-results small {
+        font-size: x-small;
+    }
 }
