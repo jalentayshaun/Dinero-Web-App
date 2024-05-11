@@ -61,23 +61,23 @@ function calculateBudget() {
     var laundry = document.querySelector(".laundry");
 
     groceries.innerHTML = incomeAfterBills * 0.25;
-    if (groceries.innerHTML > 200) {
-        groceries.innerHTML = 200;
+    if (groceries.innerHTML > 150) {
+        groceries.innerHTML = 150;
     }
 
     eatingOut.innerHTML = incomeAfterBills * 0.15;
-    if (eatingOut.innerHTML > 75) {
-        eatingOut.innerHTML = 75;
+    if (eatingOut.innerHTML > 50) {
+        eatingOut.innerHTML = 50;
     }
 
     personal.innerHTML = incomeAfterBills * 0.15;
-    if (personal.innerHTML > 100) {
-        personal.innerHTML = 100;
+    if (personal.innerHTML > 50) {
+        personal.innerHTML = 50;
     }
 
     laundry.innerHTML = incomeAfterBills * 0.05;
-    if (laundry.innerHTML > 25) {
-        laundry.innerHTML = 25;
+    if (laundry.innerHTML > 20) {
+        laundry.innerHTML = 20;
     }
 
     budgetResults.innerHTML = parseInt(groceries.innerHTML) + parseInt(eatingOut.innerHTML) + parseInt(personal.innerHTML) + parseInt(laundry.innerHTML);
